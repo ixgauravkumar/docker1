@@ -1,0 +1,216 @@
+/* =====================================================
+   CIVILRAJ PREMIUM CONSTRUCTION UI (2026 VERSION)
+===================================================== */
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fa;
+    margin:0;
+    scroll-behavior:smooth;
+}
+
+/* =====================================================
+   GLOBAL IMAGE FIX  ✅ (BIG IMAGE SOLVED)
+===================================================== */
+
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+    transition:0.4s;
+    backdrop-filter:blur(6px);
+}
+
+.navbar-brand{
+    font-weight:700;
+    letter-spacing:1px;
+    font-size:22px;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero-container{
+    position:relative;
+    height:90vh;
+    overflow:hidden;
+}
+
+.hero-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(55%);
+}
+
+/* Gradient Overlay */
+.hero-container::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        135deg,
+        rgba(0,0,0,0.6),
+        rgba(255,140,0,0.3)
+    );
+}
+
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:white;
+    z-index:2;
+    animation:fadeHero 1.2s ease;
+}
+
+@keyframes fadeHero{
+    from{opacity:0; transform:translate(-50%,-30%);}
+    to{opacity:1; transform:translate(-50%,-50%);}
+}
+
+.hero-text h1{
+    font-size:3.8rem;
+    font-weight:800;
+}
+
+.hero-text h4{
+    color:#eee;
+    margin-top:10px;
+}
+
+/* =====================================================
+   STATS SECTION
+===================================================== */
+
+.stats-box{
+    background:#fff;
+    padding:35px;
+    border-radius:14px;
+    transition:0.35s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.stats-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* =====================================================
+   PROJECT SECTION
+===================================================== */
+
+/* ---------- PROJECTS ---------- */
+
+.project-block{
+    margin-bottom:80px;
+    align-items:center;
+}
+
+/* IMAGE CONTAINER (NEW) */
+.project-img-wrapper{
+    width:100%;
+    height:320px;
+    overflow:hidden;
+    border-radius:14px;
+}
+
+/* IMAGE FIX */
+.project-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transition:0.5s ease;
+}
+
+/* HOVER EFFECT */
+.project-img-wrapper:hover .project-img{
+    transform:scale(1.08);
+}
+/* =====================================================
+   FADE SCROLL ANIMATION
+===================================================== */
+
+.fade-in{
+    opacity:0;
+    transform:translateY(50px);
+    transition:0.9s ease;
+}
+
+.fade-in.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =====================================================
+   BUTTON STYLE
+===================================================== */
+
+.btn-warning{
+    background:linear-gradient(135deg,#ffb400,#ff7b00);
+    border:none;
+    color:#fff;
+    font-weight:600;
+    padding:12px 26px;
+    transition:0.3s;
+}
+
+.btn-warning:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(255,140,0,0.4);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#111;
+    color:#ccc;
+}
+
+footer h5{
+    font-weight:700;
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE (MOBILE FIRST)
+===================================================== */
+
+@media(max-width:768px){
+
+.hero-container{
+    height:70vh;
+}
+
+.hero-text h1{
+    font-size:2rem;
+}
+
+.hero-text h4{
+    font-size:1rem;
+}
+
+.project-img{
+    height:220px;
+}
+
+.stats-box{
+    padding:25px;
+}
+
+}

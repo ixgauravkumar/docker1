@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<h2 class="mb-4">Welcome, {{ current_user.name }} 👋</h2>
+
+<div class="card shadow p-4">
+
+<h5>User Information</h5>
+<hr>
+<hr>
+
+<a href="/about">About Us</a> |
+<a href="/contact">Contact Us</a> |
+<a href="/logout">Logout</a>
+
+<hr>
+<p><b>Name:</b> {{ current_user.name }}</p>
+<p><b>Email:</b> {{ current_user.email }}</p>
+<p><b>Phone:</b> {{ current_user.phone }}</p>
+<p><b>Address:</b> {{ current_user.address }}</p>
+
+</div>
+
+</div>
+
+{% endblock %}

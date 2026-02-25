@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO ================= -->
+<div class="hero-container">
+
+    <img src="{{ url_for('static', filename='images/abc.jpeg') }}"
+         class="hero-img"
+         alt="Hero Image">
+
+    <div class="hero-text text-center text-white">
+        <h1 class="fw-bold">Rajveer’s Sons</h1>
+        <h4>Bar Bending Schedule Management System</h4>
+
+        <a href="/login" class="btn btn-warning btn-lg m-2">Login</a>
+        <a href="/register" class="btn btn-light btn-lg m-2">Register</a>
+    </div>
+
+</div>
+
+
+<!-- ================= STATS ================= -->
+<section class="container text-center section-space">
+
+    <div class="row g-4">
+
+        <div class="col-lg-4 col-md-6 fade-in">
+            <div class="stat-card">
+                <h2>120+</h2>
+                <p>Projects Completed</p>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 fade-in">
+            <div class="stat-card">
+                <h2>75+</h2>
+                <p>Happy Clients</p>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 fade-in">
+            <div class="stat-card">
+                <h2>10+</h2>
+                <p>Years Experience</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+<section class="container section-space">
+
+    <h2 class="text-center fw-bold mb-5">
+        Our Engineering Projects
+    </h2>
+
+    <div class="row g-4">
+
+        {% for p in projects %}
+        <div class="col-lg-4 col-md-6 fade-in">
+
+            <div class="project-card h-100">
+
+                <!-- ✅ IMAGE WRAPPER (REQUIRED FOR CROP) -->
+                <div class="project-img-wrapper">
+
+                    <img
+                        src="{{ url_for('static', filename='images/' + p.image) }}"
+                        class="project-img"
+                        alt="{{ p.title }}">
+
+                </div>
+
+                <!-- TEXT -->
+                <div class="p-4">
+                    <h5 class="fw-bold">{{ p.title }}</h5>
+                    <p class="text-muted mb-0">{{ p.desc }}</p>
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
